@@ -30,4 +30,13 @@ public class Booking {
     @Column
     private int covers;
 
+    public Booking(String date, String time, User user, Restaurant restaurant, int covers) {
+        this.date = date;
+        this.time = time;
+        this.user = user;
+        this.restaurant = restaurant;
+        this.covers = covers;
+    }
+
+
 }
