@@ -47,4 +47,28 @@ public class User {
 
     public User() {
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getTown() {
+        return town;
+    }
+
+    public String getPostcode() {
+        return postcode;
+    }
 }
