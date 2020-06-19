@@ -54,6 +54,18 @@ public class Restaurant {
 //    private List<Reviews> CustomerReviews
 
 
+    public Restaurant(String name, int capacity, String priceRange, String cousine, int discount, String email, String address, String postcode, String town, String openingTime, String closingTime) {
+        this.name = name;
+        this.capacity = capacity;
+        this.priceRange = priceRange;
+        this.cousine = cousine;
+        this.discount = discount;
+        this.email = email;
+        this.address = address;
+        this.postcode = postcode;
+        this.town = town;
+        this.openingTime = openingTime;
+        this.closingTime = closingTime;
 
-
+    }
 }
