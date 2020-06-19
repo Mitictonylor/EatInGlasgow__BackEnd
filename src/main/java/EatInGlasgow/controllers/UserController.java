@@ -33,6 +33,10 @@ public class UserController {
         return new ResponseEntity<>(user, HttpStatus.CREATED);
     }
 
-
+    @PutMapping(value="/{id}")
+    public ResponseEntity<User> putUser(@RequestBody User user){
+        userRepo.save(user);
+        return new ResponseEntity<>(user, HttpStatus.OK);
+    }
 
 }
