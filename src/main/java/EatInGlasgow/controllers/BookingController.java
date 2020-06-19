@@ -20,7 +20,10 @@ public class BookingController {
     public ResponseEntity<List<Booking>> getAllBookings(){
         return new ResponseEntity<>(bookingRepository.findAll(), HttpStatus.OK);
     }
-
+    @GetMapping(value = "/{id}")
+    public ResponseEntity getBookingById(@PathVariable Long id) {
+        return new ResponseEntity<>(bookingRepository.findById(id), HttpStatus.OK);
+    }
     @PostMapping
     public ResponseEntity<Booking> postBooking(@RequestBody Booking booking){
         bookingRepository.save(booking);
