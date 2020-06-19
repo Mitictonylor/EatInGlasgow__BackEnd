@@ -38,10 +38,10 @@ public class BookingController {
         return new ResponseEntity<>(booking, HttpStatus.OK);
     }
 
-    @DeleteMapping(value="/{id}")
-    public ResponseEntity<Long> deleteBooking(@PathVariable Long id){
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity deleteBooking(@PathVariable Long id) {
         bookingRepository.deleteById(id);
-        return new ResponseEntity<>(id, HttpStatus.OK);
+        return new ResponseEntity<>("Deleted Object with id " + id, HttpStatus.OK);
     }
 
 

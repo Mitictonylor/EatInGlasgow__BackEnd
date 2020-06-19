@@ -40,6 +40,10 @@ public class RestaurantController {
         return new ResponseEntity<>(restaurant, HttpStatus.OK);
     }
 
-
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity deleteRestaurant(@PathVariable Long id) {
+        restaurantRepository.deleteById(id);
+        return new ResponseEntity<>("Deleted Object with id " + id, HttpStatus.OK);
+    }
 
 }
