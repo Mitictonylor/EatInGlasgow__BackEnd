@@ -33,4 +33,13 @@ public class RestaurantController {
         restaurantRepository.save(restaurant);
         return new ResponseEntity<>(restaurant, HttpStatus.CREATED);
     }
+
+    @PutMapping(value="/{id}")
+    public ResponseEntity<Restaurant> putRestaurant(@RequestBody Restaurant restaurant){
+        restaurantRepository.save(restaurant);
+        return new ResponseEntity<>(restaurant, HttpStatus.OK);
+    }
+
+
+
 }
