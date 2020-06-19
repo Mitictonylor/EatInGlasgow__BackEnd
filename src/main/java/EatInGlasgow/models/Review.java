@@ -25,4 +25,10 @@ public class Review {
     @Column
     private int rate;
 
+    public Review(String date, User user, Restaurant restaurant, int rate) {
+        this.date = date;
+        this.user = user;
+        this.restaurant = restaurant;
+        this.rate = rate;
+    }
 }
