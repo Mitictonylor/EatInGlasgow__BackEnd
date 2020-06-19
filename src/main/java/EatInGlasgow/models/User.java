@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name="users")
@@ -29,13 +30,13 @@ public class User {
     @Column
     private String postcode;
 
-//    @JsonBackReference
-//    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
-//    private List<Booking> restaurantBooked
+    @JsonBackReference
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    private List<Booking> restaurantBooked;
 
-  //  @JsonBackReference
-//    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
-//    private List<Review> restaurantReviews
+    @JsonBackReference
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    private List<Review> restaurantReviews;
 
 
     public User(String name, String surname, String email, String town, String postcode) {
@@ -44,8 +45,8 @@ public class User {
         this.email = email;
         this.town = town;
         this.postcode = postcode;
-//        this.restaurantBooked = new ArrayList<Booking>();
-//        this.restaurantReviews = new ArrayList<Review>();
+        this.restaurantBooked = new ArrayList<Booking>();
+        this.restaurantReviews = new ArrayList<Review>();
     }
 
     public User() {

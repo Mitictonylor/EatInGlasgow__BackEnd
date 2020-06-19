@@ -1,8 +1,11 @@
 package EatInGlasgow.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.hibernate.annotations.ColumnTransformer;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name="restaurants")
@@ -45,13 +48,13 @@ public class Restaurant {
     @Column(name="closing_time")
     private String closingTime;
 
-//    @JsonBackReference
-//    @OneToMany(mappedBy = "restaurant", fetch = FetchType.LAZY)
-//    private List<Booking> customerBooked
+    @JsonBackReference
+    @OneToMany(mappedBy = "restaurant", fetch = FetchType.LAZY)
+    private List<Booking> customerBooked;
 
-    //  @JsonBackReference
-//    @OneToMany(mappedBy = "restaurant", fetch = FetchType.LAZY)
-//    private List<Review> CustomerReviews
+      @JsonBackReference
+    @OneToMany(mappedBy = "restaurant", fetch = FetchType.LAZY)
+    private List<Review> customerReviews;
 
 
     public Restaurant(String name, int capacity, String priceRange, String cousine, int discount, String email, String address, String postcode, String town, String openingTime, String closingTime) {
@@ -66,8 +69,8 @@ public class Restaurant {
         this.town = town;
         this.openingTime = openingTime;
         this.closingTime = closingTime;
-  //      this.restaurantBooked = new ArrayList<Booking>();
-//      this.restaurantReviews = new ArrayList<Review>();
+        this.customerBooked = new ArrayList<Booking>();
+        this.customerReviews = new ArrayList<Review>();
 
     }
 
