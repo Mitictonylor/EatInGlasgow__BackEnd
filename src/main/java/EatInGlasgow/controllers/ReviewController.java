@@ -34,9 +34,15 @@ public class ReviewController {
     }
 
     @PutMapping(value="/{id}")
-    public ResponseEntity<Review> putRestaurant(@RequestBody Review review){
+    public ResponseEntity<Review> putReview(@RequestBody Review review){
         reviewRepo.save(review);
         return new ResponseEntity<>(review, HttpStatus.OK);
+    }
+
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity deleteReview(@PathVariable Long id) {
+        reviewRepo.deleteById(id);
+        return new ResponseEntity<>("Deleted Object with id " + id, HttpStatus.OK);
     }
 
 }
