@@ -34,4 +34,24 @@ public class Review {
 
     public Review() {
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public Restaurant getRestaurant() {
+        return restaurant;
+    }
+
+    public int getRate() {
+        return rate;
+    }
 }
