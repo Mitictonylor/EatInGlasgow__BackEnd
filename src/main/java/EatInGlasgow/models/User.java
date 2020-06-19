@@ -4,6 +4,7 @@ package EatInGlasgow.models;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 
 @Entity
 @Table(name="users")
@@ -43,6 +44,8 @@ public class User {
         this.email = email;
         this.town = town;
         this.postcode = postcode;
+//        this.restaurantBooked = new ArrayList<Booking>();
+//        this.restaurantReviewed = new ArrayList<Reviews>();
     }
 
     public User() {
