@@ -71,4 +71,52 @@ public class Restaurant {
 
     public Restaurant() {
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public String getPriceRange() {
+        return priceRange;
+    }
+
+    public String getCousine() {
+        return cousine;
+    }
+
+    public int getDiscount() {
+        return discount;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getPostcode() {
+        return postcode;
+    }
+
+    public String getTown() {
+        return town;
+    }
+
+    public String getOpeningTime() {
+        return openingTime;
+    }
+
+    public String getClosingTime() {
+        return closingTime;
+    }
 }
