@@ -23,23 +23,10 @@ public class RestaurantController {
         return new ResponseEntity<>(restaurantRepository.findAll(), HttpStatus.OK);
     }
 
-//    @PostMapping
-//    public ResponseEntity<Booking> postBooking(@RequestBody Booking booking){
-//        bookingRepository.save(booking);
-//        return new ResponseEntity<>(booking, HttpStatus.CREATED);
-//    }
-//
-//    @PutMapping(value="/{id}")
-//    public ResponseEntity<Booking> putBooking(@RequestBody Booking booking){
-//        bookingRepository.save(booking);
-//        return new ResponseEntity<>(booking, HttpStatus.OK);
-//    }
-//
-//    @DeleteMapping(value="/{id}")
-//    public ResponseEntity<Long> deleteBooking(@PathVariable Long id){
-//        bookingRepository.deleteById(id);
-//        return new ResponseEntity<>(id, HttpStatus.OK);
-//    }
+    @GetMapping(value = "/{id}")
+    public ResponseEntity getRestaurantById(@PathVariable Long id) {
+        return new ResponseEntity<>(restaurantRepository.findById(id), HttpStatus.OK);
+    }
 
 
 }
