@@ -37,5 +37,11 @@ public class User {
 //    private List<Reviews> restaurantReviewed
 
 
-
+    public User(String name, String surname, String email, String town, String postcode) {
+        this.name = name;
+        this.surname = surname;
+        this.email = email;
+        this.town = town;
+        this.postcode = postcode;
+    }
 }
