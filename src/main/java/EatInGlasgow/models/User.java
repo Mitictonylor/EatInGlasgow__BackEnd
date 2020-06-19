@@ -35,7 +35,7 @@ public class User {
 
   //  @JsonBackReference
 //    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
-//    private List<Reviews> restaurantReviewed
+//    private List<Reviews> restaurantReviews
 
 
     public User(String name, String surname, String email, String town, String postcode) {
@@ -45,7 +45,7 @@ public class User {
         this.town = town;
         this.postcode = postcode;
 //        this.restaurantBooked = new ArrayList<Booking>();
-//        this.restaurantReviewed = new ArrayList<Reviews>();
+//        this.restaurantReviews = new ArrayList<Reviews>();
     }
 
     public User() {
