@@ -64,4 +64,28 @@ public class Booking {
     public int getCovers() {
         return covers;
     }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public void setRestaurant(Restaurant restaurant) {
+        this.restaurant = restaurant;
+    }
+
+    public void setCovers(int covers) {
+        this.covers = covers;
+    }
 }
