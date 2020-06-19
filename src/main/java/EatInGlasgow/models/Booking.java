@@ -38,5 +38,6 @@ public class Booking {
         this.covers = covers;
     }
 
-
+    public Booking() {
+    }
 }
