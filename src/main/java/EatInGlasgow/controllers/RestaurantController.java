@@ -28,5 +28,9 @@ public class RestaurantController {
         return new ResponseEntity<>(restaurantRepository.findById(id), HttpStatus.OK);
     }
 
-
+    @PostMapping
+    public ResponseEntity<Restaurant> postRestaurant(@RequestBody Restaurant restaurant){
+        restaurantRepository.save(restaurant);
+        return new ResponseEntity<>(restaurant, HttpStatus.CREATED);
+    }
 }
