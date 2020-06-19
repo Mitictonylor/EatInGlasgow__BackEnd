@@ -31,4 +31,7 @@ public class Review {
         this.restaurant = restaurant;
         this.rate = rate;
     }
+
+    public Review() {
+    }
 }
