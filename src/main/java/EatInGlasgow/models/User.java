@@ -44,4 +44,7 @@ public class User {
         this.town = town;
         this.postcode = postcode;
     }
+
+    public User() {
+    }
 }
