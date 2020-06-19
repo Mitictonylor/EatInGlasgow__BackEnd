@@ -18,7 +18,7 @@ public class UserController {
     UserRepository userRepo;
 
     @GetMapping
-    public ResponseEntity<List<User>> getAllUsers(){
+    public ResponseEntity<List<User>> getAllUsers() {
         return new ResponseEntity<>(userRepo.findAll(), HttpStatus.OK);
     }
 
@@ -28,13 +28,13 @@ public class UserController {
     }
 
     @PostMapping
-    public ResponseEntity<User> postUser(@RequestBody User user){
+    public ResponseEntity<User> postUser(@RequestBody User user) {
         userRepo.save(user);
         return new ResponseEntity<>(user, HttpStatus.CREATED);
     }
 
-    @PutMapping(value="/{id}")
-    public ResponseEntity<User> putUser(@RequestBody User user){
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<User> putUser(@RequestBody User user) {
         userRepo.save(user);
         return new ResponseEntity<>(user, HttpStatus.OK);
     }

@@ -19,7 +19,7 @@ public class RestaurantController {
     RestaurantRepository restaurantRepository;
 
     @GetMapping
-    public ResponseEntity<List<Restaurant>> getAllRestaurant(){
+    public ResponseEntity<List<Restaurant>> getAllRestaurant() {
         return new ResponseEntity<>(restaurantRepository.findAll(), HttpStatus.OK);
     }
 
@@ -29,13 +29,13 @@ public class RestaurantController {
     }
 
     @PostMapping
-    public ResponseEntity<Restaurant> postRestaurant(@RequestBody Restaurant restaurant){
+    public ResponseEntity<Restaurant> postRestaurant(@RequestBody Restaurant restaurant) {
         restaurantRepository.save(restaurant);
         return new ResponseEntity<>(restaurant, HttpStatus.CREATED);
     }
 
-    @PutMapping(value="/{id}")
-    public ResponseEntity<Restaurant> putRestaurant(@RequestBody Restaurant restaurant){
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<Restaurant> putRestaurant(@RequestBody Restaurant restaurant) {
         restaurantRepository.save(restaurant);
         return new ResponseEntity<>(restaurant, HttpStatus.OK);
     }

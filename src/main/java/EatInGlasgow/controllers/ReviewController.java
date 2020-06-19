@@ -18,7 +18,7 @@ public class ReviewController {
     ReviewRepository reviewRepo;
 
     @GetMapping
-    public ResponseEntity<List<Review>> getAllReview(){
+    public ResponseEntity<List<Review>> getAllReview() {
         return new ResponseEntity<>(reviewRepo.findAll(), HttpStatus.OK);
     }
 
@@ -28,13 +28,13 @@ public class ReviewController {
     }
 
     @PostMapping
-    public ResponseEntity<Review> postReview(@RequestBody Review review){
+    public ResponseEntity<Review> postReview(@RequestBody Review review) {
         reviewRepo.save(review);
         return new ResponseEntity<>(review, HttpStatus.CREATED);
     }
 
-    @PutMapping(value="/{id}")
-    public ResponseEntity<Review> putReview(@RequestBody Review review){
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<Review> putReview(@RequestBody Review review) {
         reviewRepo.save(review);
         return new ResponseEntity<>(review, HttpStatus.OK);
     }

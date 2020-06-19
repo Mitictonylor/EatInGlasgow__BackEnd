@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name="restaurants")
+@Table(name = "restaurants")
 public class Restaurant {
 
     @Id
@@ -45,14 +45,14 @@ public class Restaurant {
     @Column(name = "opening_time")
     private String openingTime;
 
-    @Column(name="closing_time")
+    @Column(name = "closing_time")
     private String closingTime;
 
     @JsonBackReference
     @OneToMany(mappedBy = "restaurant", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     private List<Booking> customerBooked;
 
-      @JsonBackReference
+    @JsonBackReference
     @OneToMany(mappedBy = "restaurant", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     private List<Review> customerReviews;
 
@@ -81,92 +81,92 @@ public class Restaurant {
         return id;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public int getCapacity() {
-        return capacity;
-    }
-
-    public String getPriceRange() {
-        return priceRange;
-    }
-
-    public String getCousine() {
-        return cousine;
-    }
-
-    public int getDiscount() {
-        return discount;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public String getPostcode() {
-        return postcode;
-    }
-
-    public String getTown() {
-        return town;
-    }
-
-    public String getOpeningTime() {
-        return openingTime;
-    }
-
-    public String getClosingTime() {
-        return closingTime;
-    }
-
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
+    public int getCapacity() {
+        return capacity;
+    }
+
     public void setCapacity(int capacity) {
         this.capacity = capacity;
+    }
+
+    public String getPriceRange() {
+        return priceRange;
     }
 
     public void setPriceRange(String priceRange) {
         this.priceRange = priceRange;
     }
 
+    public String getCousine() {
+        return cousine;
+    }
+
     public void setCousine(String cousine) {
         this.cousine = cousine;
+    }
+
+    public int getDiscount() {
+        return discount;
     }
 
     public void setDiscount(int discount) {
         this.discount = discount;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getAddress() {
+        return address;
     }
 
     public void setAddress(String address) {
         this.address = address;
     }
 
+    public String getPostcode() {
+        return postcode;
+    }
+
     public void setPostcode(String postcode) {
         this.postcode = postcode;
+    }
+
+    public String getTown() {
+        return town;
     }
 
     public void setTown(String town) {
         this.town = town;
     }
 
+    public String getOpeningTime() {
+        return openingTime;
+    }
+
     public void setOpeningTime(String openingTime) {
         this.openingTime = openingTime;
+    }
+
+    public String getClosingTime() {
+        return closingTime;
     }
 
     public void setClosingTime(String closingTime) {

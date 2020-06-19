@@ -4,7 +4,7 @@ package EatInGlasgow.models;
 import javax.persistence.*;
 
 @Entity
-@Table(name="reviews")
+@Table(name = "reviews")
 public class Review {
 
     @Id
@@ -39,36 +39,36 @@ public class Review {
         return id;
     }
 
-    public String getDate() {
-        return date;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public Restaurant getRestaurant() {
-        return restaurant;
-    }
-
-    public int getRate() {
-        return rate;
-    }
-
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getDate() {
+        return date;
     }
 
     public void setDate(String date) {
         this.date = date;
     }
 
+    public User getUser() {
+        return user;
+    }
+
     public void setUser(User user) {
         this.user = user;
     }
 
+    public Restaurant getRestaurant() {
+        return restaurant;
+    }
+
     public void setRestaurant(Restaurant restaurant) {
         this.restaurant = restaurant;
+    }
+
+    public int getRate() {
+        return rate;
     }
 
     public void setRate(int rate) {

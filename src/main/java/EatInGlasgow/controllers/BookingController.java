@@ -17,7 +17,7 @@ public class BookingController {
     BookingRepository bookingRepository;
 
     @GetMapping
-    public ResponseEntity<List<Booking>> getAllBookings(){
+    public ResponseEntity<List<Booking>> getAllBookings() {
         return new ResponseEntity<>(bookingRepository.findAll(), HttpStatus.OK);
     }
 
@@ -27,13 +27,13 @@ public class BookingController {
     }
 
     @PostMapping
-    public ResponseEntity<Booking> postBooking(@RequestBody Booking booking){
+    public ResponseEntity<Booking> postBooking(@RequestBody Booking booking) {
         bookingRepository.save(booking);
         return new ResponseEntity<>(booking, HttpStatus.CREATED);
     }
 
-    @PutMapping(value="/{id}")
-    public ResponseEntity<Booking> putBooking(@RequestBody Booking booking){
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<Booking> putBooking(@RequestBody Booking booking) {
         bookingRepository.save(booking);
         return new ResponseEntity<>(booking, HttpStatus.OK);
     }
@@ -43,8 +43,6 @@ public class BookingController {
         bookingRepository.deleteById(id);
         return new ResponseEntity<>("Deleted Object with id " + id, HttpStatus.OK);
     }
-
-
 
 
 }
