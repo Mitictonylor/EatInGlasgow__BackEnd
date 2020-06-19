@@ -54,4 +54,24 @@ public class Review {
     public int getRate() {
         return rate;
     }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public void setRestaurant(Restaurant restaurant) {
+        this.restaurant = restaurant;
+    }
+
+    public void setRate(int rate) {
+        this.rate = rate;
+    }
 }
