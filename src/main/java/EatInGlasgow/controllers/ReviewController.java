@@ -32,4 +32,11 @@ public class ReviewController {
         reviewRepo.save(review);
         return new ResponseEntity<>(review, HttpStatus.CREATED);
     }
+
+    @PutMapping(value="/{id}")
+    public ResponseEntity<Review> putRestaurant(@RequestBody Review review){
+        reviewRepo.save(review);
+        return new ResponseEntity<>(review, HttpStatus.OK);
+    }
+
 }
