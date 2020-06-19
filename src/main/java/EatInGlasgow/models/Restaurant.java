@@ -68,4 +68,7 @@ public class Restaurant {
         this.closingTime = closingTime;
 
     }
+
+    public Restaurant() {
+    }
 }
