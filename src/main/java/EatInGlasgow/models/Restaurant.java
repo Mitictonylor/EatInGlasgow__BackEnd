@@ -49,11 +49,11 @@ public class Restaurant {
     private String closingTime;
 
     @JsonBackReference
-    @OneToMany(mappedBy = "restaurant", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "restaurant", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     private List<Booking> customerBooked;
 
       @JsonBackReference
-    @OneToMany(mappedBy = "restaurant", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "restaurant", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     private List<Review> customerReviews;
 
 
