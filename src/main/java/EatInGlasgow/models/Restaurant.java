@@ -66,6 +66,8 @@ public class Restaurant {
         this.town = town;
         this.openingTime = openingTime;
         this.closingTime = closingTime;
+  //      this.restaurantBooked = new ArrayList<Booking>();
+//      this.restaurantReviews = new ArrayList<Reviews>();
 
     }
 
