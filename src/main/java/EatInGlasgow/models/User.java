@@ -1,6 +1,8 @@
 package EatInGlasgow.models;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 
 @Entity
@@ -26,7 +28,13 @@ public class User {
     @Column
     private String postcode;
 
+//    @JsonBackReference
+//    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+//    private List<Booking> restaurantBooked
 
+  //  @JsonBackReference
+//    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+//    private List<Reviews> restaurantReviewed
 
 
 
