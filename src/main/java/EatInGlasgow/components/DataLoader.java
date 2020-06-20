@@ -151,7 +151,7 @@ public class DataLoader implements ApplicationRunner {
         Booking booking18 = new Booking ("20/07/20", "17:00", restaurant18, user1, 5);
         Booking booking19 = new Booking ("25/07/20", "17:00", restaurant19, user1, 3);
         Booking booking20 = new Booking ("01/08/20", "17:00", restaurant20, user1, 6);
-        Booking booking21 = new Booking ("25/06/20", "17:00", restaurant1, user2, 2);
+        Booking booking21 = new Booking ("26/06/20", "17:00", restaurant1, user2, 2);
 
         bookingRepository.save(booking1);
         bookingRepository.save(booking2);
