@@ -130,7 +130,8 @@ class ApplicationTests {
 
 	@Test
 	void findReviewsByRestaurantId() {
-
+		List<Review> foundReviews = reviewRepository.findByRestaurantId(1L);
+		assertEquals(2, foundReviews.size());
 	}
 
 	@Test
