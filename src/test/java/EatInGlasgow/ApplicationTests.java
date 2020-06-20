@@ -136,6 +136,8 @@ class ApplicationTests {
 
 	@Test
 	void findReviewsByUserId() {
+		List<Review> foundReviews = reviewRepository.findByUserId(2L);
+		assertEquals(2, foundReviews.size());
 	}
 
 	@Test
