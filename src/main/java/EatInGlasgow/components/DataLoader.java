@@ -25,7 +25,8 @@ public class DataLoader implements ApplicationRunner {
     @Autowired
     UserRepository userRepository;
 
-
+    public DataLoader() {
+    }
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
