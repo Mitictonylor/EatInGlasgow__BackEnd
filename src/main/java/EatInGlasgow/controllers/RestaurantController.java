@@ -34,7 +34,7 @@ public class RestaurantController {
         return new ResponseEntity<>(restaurant, HttpStatus.CREATED);
     }
 
-    @PutMapping(value = "/restaurants/{id}")
+    @PatchMapping(value = "/restaurants/{id}")
     public ResponseEntity<Restaurant> putRestaurant(@RequestBody Restaurant restaurant) {
         restaurantRepository.save(restaurant);
         return new ResponseEntity<>(restaurant, HttpStatus.OK);

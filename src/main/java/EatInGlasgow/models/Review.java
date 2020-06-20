@@ -1,6 +1,8 @@
 package EatInGlasgow.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 
 @Entity
@@ -14,9 +16,11 @@ public class Review {
     @Column
     private String date;
 
+
     @ManyToOne
     @JoinColumn(name = "restaurant_id", nullable = false)
     private Restaurant restaurant;
+
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)

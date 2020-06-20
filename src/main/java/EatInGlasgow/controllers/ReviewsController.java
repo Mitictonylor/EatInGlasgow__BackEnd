@@ -47,7 +47,7 @@ public class ReviewsController {
         return new ResponseEntity<>(review, HttpStatus.CREATED);
     }
 
-    @PutMapping(value = "/reviews/{id}")
+    @PatchMapping(value = "/reviews/{id}")
     public ResponseEntity<Review> putReview(@RequestBody Review review) {
         reviewRepo.save(review);
         return new ResponseEntity<>(review, HttpStatus.OK);

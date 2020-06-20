@@ -1,10 +1,11 @@
 package EatInGlasgow.controllers;
 
-import EatInGlasgow.models.Review;
 import EatInGlasgow.models.User;
 import EatInGlasgow.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,11 +30,12 @@ public class UserController {
     @PostMapping(value = "/users")
     public ResponseEntity<User> postUser(@RequestBody User user) {
         userRepo.save(user);
-        return new ResponseEntity<>(user, HttpStatus.CREATED);
+        return new ResponseEntity<User>(user, HttpStatus.CREATED);
     }
 
-    @PutMapping(value = "/users/{id}")
-    public ResponseEntity<User> putUser(@RequestBody User user) {
+
+    @PatchMapping(value = "/users/{id}")
+    public ResponseEntity<User> putUser( @RequestBody User user) {
         userRepo.save(user);
         return new ResponseEntity<>(user, HttpStatus.OK);
     }

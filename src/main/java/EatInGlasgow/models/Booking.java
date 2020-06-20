@@ -1,6 +1,8 @@
 package EatInGlasgow.models;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.persistence.*;
@@ -19,9 +21,11 @@ public class Booking {
     @Column
     private String time;
 
+
     @ManyToOne
     @JoinColumn(name = "restaurant_id", nullable = false)
     private Restaurant restaurant;
+
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)

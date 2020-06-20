@@ -46,7 +46,7 @@ public class BookingController {
         return new ResponseEntity<>(booking, HttpStatus.CREATED);
     }
 
-    @PutMapping(value = "/bookings/{id}")
+    @PatchMapping(value = "/bookings/{id}")
     public ResponseEntity<Booking> putBooking(@RequestBody Booking booking) {
         bookingRepository.save(booking);
         return new ResponseEntity<>(booking, HttpStatus.OK);
