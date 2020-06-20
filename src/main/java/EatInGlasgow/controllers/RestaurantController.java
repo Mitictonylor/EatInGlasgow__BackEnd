@@ -45,5 +45,9 @@ public class RestaurantController {
         restaurantRepository.deleteById(id);
         return new ResponseEntity<>("Deleted Object with id " + id, HttpStatus.OK);
     }
+    @GetMapping(value = "/restaurants/{id}/bookings")
+    public ResponseEntity<List<Restaurant>> getAllRestaurantBookings() {
+        return new ResponseEntity<>(restaurantRepository.findAll(), HttpStatus.OK);
+    }
 
 }

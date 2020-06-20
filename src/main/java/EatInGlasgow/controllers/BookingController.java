@@ -16,7 +16,22 @@ public class BookingController {
     BookingRepository bookingRepository;
 
     @GetMapping(value="/bookings")
-    public ResponseEntity<List<Booking>> getAllBookings() {
+    public ResponseEntity<List<Booking>> getAllBookings(
+        @RequestParam(name="restaurant_id", required = false) Long restaurant_id,
+        @RequestParam(name="date", required = false) String date,
+        @RequestParam(name="user_id", required = false) Long user_id) {
+        if (restaurant_id !=null & date !=null){
+            return new ResponseEntity<>(bookingRepository.findByRestaurantIdAndDate(user_id, date),HttpStatus.OK);
+        }
+        if (user_id !=null & date !=null){
+            return new ResponseEntity<>(bookingRepository.findByUserIdAndDate(restaurant_id, date),HttpStatus.OK);
+        }
+        if(restaurant_id !=null){
+            return new ResponseEntity<>(bookingRepository.findByRestaurantId(restaurant_id),HttpStatus.OK);
+        }
+        if(user_id !=null){
+            return new ResponseEntity<>(bookingRepository.findByUserId(user_id),HttpStatus.OK);
+        }
         return new ResponseEntity<>(bookingRepository.findAll(), HttpStatus.OK);
     }
 
