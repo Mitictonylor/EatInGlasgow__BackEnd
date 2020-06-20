@@ -105,11 +105,13 @@ class ApplicationTests {
 
 	@Test
 	void findBookingsByRestaurantId() {
-
+		List<Booking> foundBookings = bookingRepository.findByRestaurantId(1L);
+		assertEquals(2, foundBookings.size());
 	}
 
 	@Test
 	void findBookingsByUserId() {
+
 	}
 
 	@Test
