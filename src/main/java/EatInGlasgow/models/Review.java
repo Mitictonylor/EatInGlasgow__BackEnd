@@ -15,20 +15,22 @@ public class Review {
     private String date;
 
     @ManyToOne
+    @JoinColumn(name = "course_id", nullable = false)
+    private Restaurant restaurant;
+
+
+    @ManyToOne
     @JoinColumn(name = "customer_id", nullable = false)
     private User user;
 
-    @ManyToOne
-    @JoinColumn(name = "course_id", nullable = false)
-    private Restaurant restaurant;
 
     @Column
     private int rate;
 
-    public Review(String date, User user, Restaurant restaurant, int rate) {
+    public Review(String date, Restaurant restaurant, User user, int rate) {
         this.date = date;
-        this.user = user;
         this.restaurant = restaurant;
+        this.user = user;
         this.rate = rate;
     }
 

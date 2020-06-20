@@ -176,6 +176,28 @@ public class DataLoader implements ApplicationRunner {
         bookingRepository.save(booking21);
 
 
+        Review review1 = new Review ("27/06/20", restaurant1, user1, 5);
+        Review review2 = new Review ("27/06/20", restaurant2, user2, 3);
+        Review review3 = new Review ("27/06/20", restaurant3, user3, 4);
+        Review review4 = new Review ("27/06/20", restaurant4, user4, 4);
+        Review review5 = new Review ("27/06/20", restaurant5, user5, 4);
+        Review review6 = new Review ("27/06/20", restaurant6, user6, 5);
+        Review review7 = new Review ("27/06/20", restaurant7, user7, 5);
+        Review review8 = new Review ("27/06/20", restaurant8, user8, 4);
+        Review review9 = new Review ("27/06/20", restaurant9, user9, 2);
+        Review review10 = new Review ("27/06/20", restaurant10, user10, 5);
+        Review review11 = new Review ("27/06/20", restaurant11, user11, 5);
+        Review review12 = new Review ("27/06/20", restaurant12, user12, 1);
+        Review review13 = new Review ("27/06/20", restaurant13, user13, 4);
+        Review review14 = new Review ("27/06/20", restaurant14, user14, 4);
+        Review review15 = new Review ("27/06/20", restaurant15, user15, 5);
+        Review review16 = new Review ("02/07/20", restaurant16, user1, 2);
+        Review review17 = new Review ("12/07/20", restaurant17, user1, 4);
+        Review review18 = new Review ("22/07/20", restaurant18, user1, 3);
+        Review review19 = new Review ("27/07/20", restaurant19, user1, 4);
+        Review review20 = new Review ("03/08/20", restaurant20, user1, 4);
+        Review review21 = new Review ("27/06/20", restaurant1, user2, 5);
+
 
 
 
