@@ -124,7 +124,8 @@ class ApplicationTests {
 
 	@Test
 	void findBookingsByRestaurantIdAndDate() {
-
+		List<Booking> foundBookings = bookingRepository.findByRestaurantIdAndDate(1L, "25/06/20");
+		assertEquals(1, foundBookings.size());
 	}
 
 	@Test
