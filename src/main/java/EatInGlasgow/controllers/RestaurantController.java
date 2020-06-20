@@ -12,35 +12,35 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(name = "/restaurants")
+
 public class RestaurantController {
 
     @Autowired
     RestaurantRepository restaurantRepository;
 
-    @GetMapping
+    @GetMapping(value = "/restaurants")
     public ResponseEntity<List<Restaurant>> getAllRestaurant() {
         return new ResponseEntity<>(restaurantRepository.findAll(), HttpStatus.OK);
     }
 
-    @GetMapping(value = "/{id}")
+    @GetMapping(value = "/restaurants/{id}")
     public ResponseEntity getRestaurantById(@PathVariable Long id) {
         return new ResponseEntity<>(restaurantRepository.findById(id), HttpStatus.OK);
     }
 
-    @PostMapping
+    @PostMapping(value = "/restaurants")
     public ResponseEntity<Restaurant> postRestaurant(@RequestBody Restaurant restaurant) {
         restaurantRepository.save(restaurant);
         return new ResponseEntity<>(restaurant, HttpStatus.CREATED);
     }
 
-    @PutMapping(value = "/{id}")
+    @PutMapping(value = "/restaurants/{id}")
     public ResponseEntity<Restaurant> putRestaurant(@RequestBody Restaurant restaurant) {
         restaurantRepository.save(restaurant);
         return new ResponseEntity<>(restaurant, HttpStatus.OK);
     }
 
-    @DeleteMapping(value = "/{id}")
+    @DeleteMapping(value = "/restaurants/{id}")
     public ResponseEntity deleteRestaurant(@PathVariable Long id) {
         restaurantRepository.deleteById(id);
         return new ResponseEntity<>("Deleted Object with id " + id, HttpStatus.OK);

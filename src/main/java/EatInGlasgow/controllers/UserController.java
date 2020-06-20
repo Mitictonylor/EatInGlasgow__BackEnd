@@ -11,35 +11,34 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(name = "/users")
 public class UserController {
 
     @Autowired
     UserRepository userRepo;
 
-    @GetMapping
+    @GetMapping(value = "/users")
     public ResponseEntity<List<User>> getAllUsers() {
         return new ResponseEntity<>(userRepo.findAll(), HttpStatus.OK);
     }
 
-    @GetMapping(value = "/{id}")
+    @GetMapping(value = "/users/{id}")
     public ResponseEntity getUserById(@PathVariable Long id) {
         return new ResponseEntity<>(userRepo.findById(id), HttpStatus.OK);
     }
 
-    @PostMapping
+    @PostMapping(value = "/users")
     public ResponseEntity<User> postUser(@RequestBody User user) {
         userRepo.save(user);
         return new ResponseEntity<>(user, HttpStatus.CREATED);
     }
 
-    @PutMapping(value = "/{id}")
+    @PutMapping(value = "/users/{id}")
     public ResponseEntity<User> putUser(@RequestBody User user) {
         userRepo.save(user);
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
 
-    @DeleteMapping(value = "/{id}")
+    @DeleteMapping(value = "/users/{id}")
     public ResponseEntity deleteUser(@PathVariable Long id) {
         userRepo.deleteById(id);
         return new ResponseEntity<>("Deleted Object with id " + id, HttpStatus.OK);
