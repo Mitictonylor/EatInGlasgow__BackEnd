@@ -4,6 +4,7 @@ package EatInGlasgow.models;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,11 +33,11 @@ public class User {
 
     @JsonBackReference
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
-    private List<Booking> restaurantBooked;
+    private List<Booking> bookings;
 
     @JsonBackReference
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
-    private List<Review> restaurantReviews;
+    private List<Review> reviews;
 
 
     public User(String name, String surname, String email, String town, String postcode) {
@@ -45,8 +46,8 @@ public class User {
         this.email = email;
         this.town = town;
         this.postcode = postcode;
-        this.restaurantBooked = new ArrayList<Booking>();
-        this.restaurantReviews = new ArrayList<Review>();
+        this.bookings = new ArrayList<Booking>();
+        this.reviews = new ArrayList<Review>();
     }
 
     public User() {
@@ -56,20 +57,20 @@ public class User {
         return id;
     }
 
-    public List<Booking> getRestaurantBooked() {
-        return restaurantBooked;
+    public List<Booking> getBookings() {
+        return bookings;
     }
 
-    public void setRestaurantBooked(List<Booking> restaurantBooked) {
-        this.restaurantBooked = restaurantBooked;
+    public void setBookings(List<Booking> bookings) {
+        this.bookings = bookings;
     }
 
-    public List<Review> getRestaurantReviews() {
-        return restaurantReviews;
+    public List<Review> getReviews() {
+        return reviews;
     }
 
-    public void setRestaurantReviews(List<Review> restaurantReviews) {
-        this.restaurantReviews = restaurantReviews;
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
     }
 
     public void setId(Long id) {
@@ -117,20 +118,25 @@ public class User {
     }
 
     public void addReviews(Review review){
-        if(review.getRestaurant().getCustomerBooked().contains(review.getUser())){
-        this.restaurantReviews.add(review);}
+        if(review.getRestaurant().getBookings().contains(review.getUser())){
+        this.reviews.add(review);
+        review.getRestaurant().addReview(review);}
     }
 
     public void addBooking(Booking booking){
-        if(booking.getRestaurant().getCapacity() >= booking.getCovers()){
-            this.restaurantBooked.add(booking);}
+        LocalTime bookingTime = LocalTime.parse(booking.getTime());
+        LocalTime restaurantOpenTime = LocalTime.parse(booking.getRestaurant().getOpeningTime());
+        LocalTime restaurantCloseTime = LocalTime.parse(booking.getRestaurant().getClosingTime());
+        if(booking.getRestaurant().getCapacity() >= booking.getCovers() && bookingTime.isAfter(restaurantOpenTime) && bookingTime.isBefore(restaurantCloseTime)){
+            this.bookings.add(booking);
+             booking.getRestaurant().addBooking(booking);}
     }
 
     public int countBookings(){
-        return this.restaurantBooked.size();
+        return this.bookings.size();
     }
 
     public int countReviews(){
-        return this.restaurantReviews.size();
+        return this.reviews.size();
     }
 }

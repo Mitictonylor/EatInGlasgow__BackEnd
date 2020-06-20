@@ -15,7 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -56,8 +56,12 @@ class ApplicationTests {
 		Restaurant restaurant3 = new Restaurant ("Number 16 Restaurant", "https://lh5.googleusercontent.com/p/AF1QipOzTp1NarhEbaD6N5fwcdmDOZzAw1dzqIurhJho=w408-h524-k-no", 40, "expensive", "European", 0, "no16@gmail.com", "16 Byres Rd", "G11 5JY", "Glasgow", "12:00", "23:00");
 		User user3 = new User ("Sarah", "Harrington", "sarah@gmail.com", "Glasgow", "g37tq");
 		Booking booking = new Booking ("25/06/20", "17:00", restaurant3, user3, 4);
+		assertEquals(0, user3.countBookings());
+		assertEquals(0, restaurant3.countBookings());
 		user3.addBooking(booking);
 		assertEquals(1, user3.countBookings());
+		assertEquals(1, restaurant3.countBookings());
+		assertEquals(user3, restaurant3.getBookings().get(0).getUser());
 	}
 	@Test
 	void userCanNotAddABooking__restaurantfull() {
@@ -67,4 +71,34 @@ class ApplicationTests {
 		user3.addBooking(booking);
 		assertEquals(0, user3.countBookings());
 	}
+
+	@Test
+	void userCanNotAddABooking__restaurantNotOpen__tooEarly() {
+		Restaurant restaurant3 = new Restaurant ("Number 16 Restaurant", "https://lh5.googleusercontent.com/p/AF1QipOzTp1NarhEbaD6N5fwcdmDOZzAw1dzqIurhJho=w408-h524-k-no", 60, "expensive", "European", 0, "no16@gmail.com", "16 Byres Rd", "G11 5JY", "Glasgow", "17:00", "23:00");
+		User user3 = new User ("Sarah", "Harrington", "sarah@gmail.com", "Glasgow", "g37tq");
+		Booking booking = new Booking ("25/06/20", "16:00", restaurant3, user3, 4);
+		user3.addBooking(booking);
+		assertEquals(0, user3.countBookings());
+	}
+
+	@Test
+	void userCanNotAddABooking__restaurantNotOpen__tooLate() {
+		Restaurant restaurant3 = new Restaurant ("Number 16 Restaurant", "https://lh5.googleusercontent.com/p/AF1QipOzTp1NarhEbaD6N5fwcdmDOZzAw1dzqIurhJho=w408-h524-k-no", 60, "expensive", "European", 0, "no16@gmail.com", "16 Byres Rd", "G11 5JY", "Glasgow", "17:00", "18:59");
+		User user3 = new User ("Sarah", "Harrington", "sarah@gmail.com", "Glasgow", "g37tq");
+		Booking booking = new Booking ("25/06/20", "19:00", restaurant3, user3, 4);
+		user3.addBooking(booking);
+		assertEquals(0, user3.countBookings());
+	}
+
+	@Test
+	void userCanNotAddAReview__neverBeenToTheRestaurant() {
+		Restaurant restaurant3 = new Restaurant ("Number 16 Restaurant", "https://lh5.googleusercontent.com/p/AF1QipOzTp1NarhEbaD6N5fwcdmDOZzAw1dzqIurhJho=w408-h524-k-no", 2, "expensive", "European", 0, "no16@gmail.com", "16 Byres Rd", "G11 5JY", "Glasgow", "12:00", "23:00");
+		User user3 = new User ("Sarah", "Harrington", "sarah@gmail.com", "Glasgow", "g37tq");
+		Review review2 = new Review ("27/06/20", restaurant3, user3, 3);
+		user3.addReviews(review2);
+		assertEquals(0, user3.countReviews());
+		assertFalse(restaurant3.getBookings().contains(user3));
+	}
+
+
 }

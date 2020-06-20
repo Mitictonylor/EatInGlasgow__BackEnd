@@ -1,7 +1,6 @@
 package EatInGlasgow.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import org.hibernate.annotations.ColumnTransformer;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -53,11 +52,11 @@ public class Restaurant {
 
     @JsonBackReference
     @OneToMany(mappedBy = "restaurant", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
-    private List<Booking> customerBooked;
+    private List<Booking> bookings;
 
     @JsonBackReference
     @OneToMany(mappedBy = "restaurant", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
-    private List<Review> customerReviews;
+    private List<Review> reviews;
 
     public Restaurant(String name, String pictureUrl, int capacity, String priceRange, String cousine, int discount, String email, String address, String postcode, String town, String openingTime, String closingTime) {
         this.name = name;
@@ -72,8 +71,8 @@ public class Restaurant {
         this.town = town;
         this.openingTime = openingTime;
         this.closingTime = closingTime;
-        this.customerBooked = new ArrayList<Booking>();
-        this.customerReviews = new ArrayList<Review>();
+        this.bookings = new ArrayList<Booking>();
+        this.reviews = new ArrayList<Review>();
     }
 
     public String getPictureUrl() {
@@ -84,20 +83,20 @@ public class Restaurant {
         this.pictureUrl = pictureUrl;
     }
 
-    public List<Booking> getCustomerBooked() {
-        return customerBooked;
+    public List<Booking> getBookings() {
+        return bookings;
     }
 
-    public void setCustomerBooked(List<Booking> customerBooked) {
-        this.customerBooked = customerBooked;
+    public void setBookings(List<Booking> bookings) {
+        this.bookings = bookings;
     }
 
-    public List<Review> getCustomerReviews() {
-        return customerReviews;
+    public List<Review> getReviews() {
+        return reviews;
     }
 
-    public void setCustomerReviews(List<Review> customerReviews) {
-        this.customerReviews = customerReviews;
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
     }
 
     public Restaurant() {
@@ -198,4 +197,21 @@ public class Restaurant {
     public void setClosingTime(String closingTime) {
         this.closingTime = closingTime;
     }
+
+    public void addBooking(Booking booking){
+        this.bookings.add(booking);
+    }
+
+    public void addReview(Review review){
+        this.reviews.add(review);
+    }
+
+    public int countBookings(){
+        return this.bookings.size();
+    }
+
+    public int countReviews(){
+        return this.reviews.size();
+    }
+
 }
