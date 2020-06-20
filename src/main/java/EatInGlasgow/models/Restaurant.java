@@ -19,6 +19,9 @@ public class Restaurant {
     private String name;
 
     @Column
+    private String pictureUrl;
+
+    @Column
     private int capacity;
 
     @Column(name = "price_range")
@@ -56,9 +59,9 @@ public class Restaurant {
     @OneToMany(mappedBy = "restaurant", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     private List<Review> customerReviews;
 
-
-    public Restaurant(String name, int capacity, String priceRange, String cousine, int discount, String email, String address, String postcode, String town, String openingTime, String closingTime) {
+    public Restaurant(String name, String pictureUrl, int capacity, String priceRange, String cousine, int discount, String email, String address, String postcode, String town, String openingTime, String closingTime) {
         this.name = name;
+        this.pictureUrl = pictureUrl;
         this.capacity = capacity;
         this.priceRange = priceRange;
         this.cousine = cousine;
@@ -71,7 +74,30 @@ public class Restaurant {
         this.closingTime = closingTime;
         this.customerBooked = new ArrayList<Booking>();
         this.customerReviews = new ArrayList<Review>();
+    }
 
+    public String getPictureUrl() {
+        return pictureUrl;
+    }
+
+    public void setPictureUrl(String pictureUrl) {
+        this.pictureUrl = pictureUrl;
+    }
+
+    public List<Booking> getCustomerBooked() {
+        return customerBooked;
+    }
+
+    public void setCustomerBooked(List<Booking> customerBooked) {
+        this.customerBooked = customerBooked;
+    }
+
+    public List<Review> getCustomerReviews() {
+        return customerReviews;
+    }
+
+    public void setCustomerReviews(List<Review> customerReviews) {
+        this.customerReviews = customerReviews;
     }
 
     public Restaurant() {

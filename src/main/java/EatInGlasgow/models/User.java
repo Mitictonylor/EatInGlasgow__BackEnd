@@ -56,6 +56,22 @@ public class User {
         return id;
     }
 
+    public List<Booking> getRestaurantBooked() {
+        return restaurantBooked;
+    }
+
+    public void setRestaurantBooked(List<Booking> restaurantBooked) {
+        this.restaurantBooked = restaurantBooked;
+    }
+
+    public List<Review> getRestaurantReviews() {
+        return restaurantReviews;
+    }
+
+    public void setRestaurantReviews(List<Review> restaurantReviews) {
+        this.restaurantReviews = restaurantReviews;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }
