@@ -15,6 +15,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
@@ -100,6 +102,42 @@ class ApplicationTests {
 		assertEquals(user3, restaurant3.getBookings().get(0).getUser());
 		assertEquals(user3, restaurant3.getReviews().get(0).getUser());
 	}
+
+	@Test
+	void findBookingsByRestaurantId() {
+
+	}
+
+	@Test
+	void findBookingsByUserId() {
+	}
+
+	@Test
+	void findBookingsByUserIdAndDate() {
+	}
+
+	@Test
+	void findBookingsByRestaurantIdAndDate() {
+
+	}
+	@Test
+	void findReviewsByRestaurantId() {
+
+	}
+
+	@Test
+	void findReviewsByUserId() {
+	}
+
+	@Test
+	void findReviewsByUserIdAndDate() {
+	}
+
+	@Test
+	void findReviewsByRestaurantIdAndDate() {
+
+	}
+
 
 
 }
