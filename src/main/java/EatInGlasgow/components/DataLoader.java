@@ -1,5 +1,6 @@
 package EatInGlasgow.components;
 
+import EatInGlasgow.models.Booking;
 import EatInGlasgow.models.Restaurant;
 import EatInGlasgow.models.Review;
 import EatInGlasgow.models.User;
@@ -130,6 +131,27 @@ public class DataLoader implements ApplicationRunner {
         restaurantRepository.save(restaurant19);
         restaurantRepository.save(restaurant20);
 
+        Booking booking1 = new Booking ("25/06/20", "17:00", restaurant1, user1, 4);
+        Booking booking2 = new Booking ("25/06/20", "17:00", restaurant2, user2, 2);
+        Booking booking3 = new Booking ("25/06/20", "17:00", restaurant3, user3, 7);
+        Booking booking4 = new Booking ("25/06/20", "17:00", restaurant4, user4, 4);
+        Booking booking5 = new Booking ("25/06/20", "17:00", restaurant5, user5, 4);
+        Booking booking6 = new Booking ("25/06/20", "17:00", restaurant6, user6, 4);
+        Booking booking7 = new Booking ("25/06/20", "17:00", restaurant7, user7, 4);
+        Booking booking8 = new Booking ("25/06/20", "17:00", restaurant8, user8, 2);
+        Booking booking9 = new Booking ("25/06/20", "17:00", restaurant9, user9, 3);
+        Booking booking10 = new Booking ("25/06/20", "17:00", restaurant10, user10, 4);
+        Booking booking11 = new Booking ("25/06/20", "17:00", restaurant11, user11, 4);
+        Booking booking12 = new Booking ("25/06/20", "17:00", restaurant12, user12, 4);
+        Booking booking13 = new Booking ("25/06/20", "17:00", restaurant13, user13, 4);
+        Booking booking14 = new Booking ("25/06/20", "17:00", restaurant14, user14, 5);
+        Booking booking15 = new Booking ("25/06/20", "17:00", restaurant15, user15, 4);
+        Booking booking16 = new Booking ("30/06/20", "17:00", restaurant16, user1, 1);
+        Booking booking17 = new Booking ("10/07/20", "17:00", restaurant17, user1, 4);
+        Booking booking18 = new Booking ("20/07/20", "17:00", restaurant18, user1, 5);
+        Booking booking19 = new Booking ("25/07/20", "17:00", restaurant19, user1, 3);
+        Booking booking20 = new Booking ("01/08/20", "17:00", restaurant20, user1, 6);
+        Booking booking21 = new Booking ("25/06/20", "17:00", restaurant1, user2, 2);
 
 
     }
