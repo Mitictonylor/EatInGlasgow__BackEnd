@@ -46,12 +46,29 @@ public class DataLoader implements ApplicationRunner {
         User user8 = new User ("Harry", "Brown", "harry@gmail.com", "Motherwell", "ml13dg");
         User user9 = new User ("Michael", "Anderson", "michael@gmail.com", "Glasgow", "g414pg");
         User user10 = new User ("Anna", "Darcy", "anna@gmail.com", "Glasgow", "g514tf");
-        User user11 = new User ("Robert", "Simons", "robert@gmail.com", "Glasgow", "g128qq");
+        User user11 = new User ("Robert", "Simmons", "robert@gmail.com", "Glasgow", "g128qq");
         User user12 = new User ("Lisa", "Wilson", "lisa@gmail.com", "Glasgow", "g38ag");
         User user13 = new User ("Peter", "McDonald", "peter@gmail.com", "Glasgow", "g50an");
         User user14 = new User ("Silvia", "Dickens", "silvia@gmail.com", "Glasgow", "g731ug");
         User user15 = new User ("George", "Reynolds", "george@gmail.com", "Glasgow", "g58dj");
 
+        userRepository.save(user1);
+        userRepository.save(user2);
+        userRepository.save(user3);
+        userRepository.save(user4);
+        userRepository.save(user5);
+        userRepository.save(user6);
+        userRepository.save(user7);
+        userRepository.save(user8);
+        userRepository.save(user9);
+        userRepository.save(user10);
+        userRepository.save(user11);
+        userRepository.save(user12);
+        userRepository.save(user13);
+        userRepository.save(user14);
+        userRepository.save(user15);
+
+        
 
 
 
