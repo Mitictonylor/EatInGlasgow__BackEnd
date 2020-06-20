@@ -3,6 +3,7 @@ package EatInGlasgow.models;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -198,20 +199,30 @@ public class Restaurant {
         this.closingTime = closingTime;
     }
 
-    public void addBooking(Booking booking){
+    public void addBooking(Booking booking) {
         this.bookings.add(booking);
     }
 
-    public void addReview(Review review){
+    public void addReview(Review review) {
         this.reviews.add(review);
     }
 
-    public int countBookings(){
+    public int countBookings() {
         return this.bookings.size();
     }
 
-    public int countReviews(){
+    public int countReviews() {
         return this.reviews.size();
     }
 
+    public int countBookingsParDay(String date) {
+        int totBookingParDay = 0;
+        for (Booking booking : this.bookings) {
+            if (booking.getDate() == date) {
+                totBookingParDay += booking.getCovers();
+            }
+
+        }
+        return totBookingParDay;
+    }
 }

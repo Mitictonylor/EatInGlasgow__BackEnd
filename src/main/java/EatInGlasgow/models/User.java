@@ -118,16 +118,19 @@ public class User {
     }
 
     public void addReviews(Review review){
-        if(review.getRestaurant().getBookings().contains(review.getUser())){
-        this.reviews.add(review);
-        review.getRestaurant().addReview(review);}
-    }
+        for(Booking booking : review.getRestaurant().getBookings()){
+            if(booking.getUser() == review.getUser()){
+            this.reviews.add(review);
+            review.getRestaurant().addReview(review);}
+    }}
 
     public void addBooking(Booking booking){
         LocalTime bookingTime = LocalTime.parse(booking.getTime());
         LocalTime restaurantOpenTime = LocalTime.parse(booking.getRestaurant().getOpeningTime());
         LocalTime restaurantCloseTime = LocalTime.parse(booking.getRestaurant().getClosingTime());
-        if(booking.getRestaurant().getCapacity() >= booking.getCovers() && bookingTime.isAfter(restaurantOpenTime) && bookingTime.isBefore(restaurantCloseTime)){
+        int restCapacity = booking.getRestaurant().getCapacity();
+        int dailyReservation = booking.getRestaurant().countBookingsParDay(booking.getDate());
+        if( restCapacity >= (dailyReservation + booking.getCovers()) && bookingTime.isAfter(restaurantOpenTime) && bookingTime.isBefore(restaurantCloseTime)){
             this.bookings.add(booking);
              booking.getRestaurant().addBooking(booking);}
     }

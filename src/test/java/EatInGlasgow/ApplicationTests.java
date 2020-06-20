@@ -97,7 +97,20 @@ class ApplicationTests {
 		Review review2 = new Review ("27/06/20", restaurant3, user3, 3);
 		user3.addReviews(review2);
 		assertEquals(0, user3.countReviews());
-		assertFalse(restaurant3.getBookings().contains(user3));
+		assertEquals(0, restaurant3.getBookings().size());
+	}
+	@Test
+	void userCanAddAReview() {
+		Restaurant restaurant3 = new Restaurant ("Number 16 Restaurant", "https://lh5.googleusercontent.com/p/AF1QipOzTp1NarhEbaD6N5fwcdmDOZzAw1dzqIurhJho=w408-h524-k-no", 50, "expensive", "European", 0, "no16@gmail.com", "16 Byres Rd", "G11 5JY", "Glasgow", "12:00", "23:00");
+		User user3 = new User ("Sarah", "Harrington", "sarah@gmail.com", "Glasgow", "g37tq");
+		Booking booking = new Booking ("25/06/20", "19:00", restaurant3, user3, 4);
+		Review review2 = new Review ("27/06/20", restaurant3, user3, 3);
+		user3.addBooking(booking);
+		assertEquals(user3, restaurant3.getBookings().get(0).getUser());
+		user3.addReviews(review2);
+		assertEquals(1, user3.countReviews());
+		assertEquals(user3, restaurant3.getBookings().get(0).getUser());
+		assertEquals(user3, restaurant3.getReviews().get(0).getUser());
 	}
 
 
