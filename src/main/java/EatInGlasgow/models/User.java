@@ -115,4 +115,22 @@ public class User {
     public void setPostcode(String postcode) {
         this.postcode = postcode;
     }
+
+    public void addReviews(Review review){
+        if(review.getRestaurant().getCustomerBooked().contains(review.getUser())){
+        this.restaurantReviews.add(review);}
+    }
+
+    public void addBooking(Booking booking){
+        if(booking.getRestaurant().getCapacity() >= booking.getCovers()){
+            this.restaurantBooked.add(booking);}
+    }
+
+    public int countBookings(){
+        return this.restaurantBooked.size();
+    }
+
+    public int countReviews(){
+        return this.restaurantReviews.size();
+    }
 }
