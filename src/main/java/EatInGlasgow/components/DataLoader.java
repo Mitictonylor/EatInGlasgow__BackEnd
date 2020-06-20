@@ -198,8 +198,27 @@ public class DataLoader implements ApplicationRunner {
         Review review20 = new Review ("03/08/20", restaurant20, user1, 4);
         Review review21 = new Review ("27/06/20", restaurant1, user2, 5);
 
-
-
+        reviewRepository.save(review1);
+        reviewRepository.save(review2);
+        reviewRepository.save(review3);
+        reviewRepository.save(review4);
+        reviewRepository.save(review5);
+        reviewRepository.save(review6);
+        reviewRepository.save(review7);
+        reviewRepository.save(review8);
+        reviewRepository.save(review9);
+        reviewRepository.save(review10);
+        reviewRepository.save(review11);
+        reviewRepository.save(review12);
+        reviewRepository.save(review13);
+        reviewRepository.save(review14);
+        reviewRepository.save(review15);
+        reviewRepository.save(review16);
+        reviewRepository.save(review17);
+        reviewRepository.save(review18);
+        reviewRepository.save(review19);
+        reviewRepository.save(review20);
+        reviewRepository.save(review21);
 
     }
 }
