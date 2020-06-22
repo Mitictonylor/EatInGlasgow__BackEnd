@@ -3,6 +3,7 @@ package EatInGlasgow.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.persistence.*;
@@ -21,13 +22,15 @@ public class Booking {
     @Column
     private String time;
 
-
     @ManyToOne
+    @JsonIgnoreProperties(value = {"bookings", "reviews"})
+
     @JoinColumn(name = "restaurant_id", nullable = false)
     private Restaurant restaurant;
 
-
     @ManyToOne
+    @JsonIgnoreProperties(value = {"bookings", "reviews"})
+
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 

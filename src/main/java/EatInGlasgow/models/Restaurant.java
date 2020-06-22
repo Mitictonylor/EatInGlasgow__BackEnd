@@ -2,6 +2,7 @@ package EatInGlasgow.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -52,12 +53,12 @@ public class Restaurant {
     @Column(name = "closing_time")
     private String closingTime;
 
-    @JsonBackReference(value="bookings")
-    @OneToMany(mappedBy = "restaurant", fetch = FetchType.LAZY, cascade= CascadeType.ALL)
+
+    @OneToMany(mappedBy = "restaurant", fetch = FetchType.EAGER, cascade= CascadeType.ALL)
     private List<Booking> bookings;
 
-    @JsonBackReference(value="reviews")
-    @OneToMany(mappedBy = "restaurant", fetch = FetchType.LAZY,  cascade = CascadeType.ALL)
+
+    @OneToMany(mappedBy = "restaurant", fetch = FetchType.EAGER,  cascade = CascadeType.ALL)
     private List<Review> reviews;
 
     public Restaurant(String name, String pictureUrl, int capacity, String priceRange, String cousine, int discount, String email, String address, String postcode, String town, String openingTime, String closingTime) {

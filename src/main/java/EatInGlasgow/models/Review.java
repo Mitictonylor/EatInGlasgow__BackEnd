@@ -1,6 +1,7 @@
 package EatInGlasgow.models;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
@@ -16,16 +17,17 @@ public class Review {
     @Column
     private String date;
 
-
     @ManyToOne
+    @JsonIgnoreProperties(value = {"bookings", "reviews"})
+
     @JoinColumn(name = "restaurant_id", nullable = false)
     private Restaurant restaurant;
 
-
     @ManyToOne
+    @JsonIgnoreProperties(value = {"bookings", "reviews"})
+
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
-
 
 
     @Column

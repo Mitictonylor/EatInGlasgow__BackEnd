@@ -4,6 +4,7 @@ package EatInGlasgow.models;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.time.LocalTime;
@@ -33,12 +34,13 @@ public class User {
     @Column
     private String postcode;
 
-    @JsonBackReference(value="bookings")
-    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade= CascadeType.ALL)
+
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade= CascadeType.ALL)
     private List<Booking> bookings;
 
-    @JsonBackReference(value="reviews")
-    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY,  cascade = CascadeType.ALL)
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER,  cascade = CascadeType.ALL)
     private List<Review> reviews;
 
 

@@ -85,7 +85,7 @@ public class DataLoader implements ApplicationRunner {
 
         Restaurant restaurant7 = new Restaurant ("Paesano", "https://lh5.googleusercontent.com/p/AF1QipMdz4uViRzrikvXv88NLGA4_g7M1lw_R-dRcXyj=w480-h240-k-no", 120,  "medium", "Italian", 0, "paesano@gmail.com", "94 Miller St", "G1 1DT", "Glasgow", "12:00", "21:00");
 
-        Restaurant restaurant8 = new Restaurant ("Miller & Carter", "https://lh5.googleusercontent.com/p/AF1QipMwhalZegA4l_jibCbOr9OBSEHX5gi7yOD_rIei=w408-h272-k-no", 60,  "expensive", "steak house", 0, "m&c@gmail.com", "47 St Vincent St", "G2 5QX", "Glasgow", "12:00", "23:00");
+        Restaurant restaurant8 = new Restaurant ("Miller & Carter", "https://lh5.googleusercontent.com/p/AF1QipMwhalZegA4l_jibCbOr9OBSEHX5gi7yOD_rIei=w408-h272-k-no", 60,  "expensive", "steak house", 0, "m&c@gmail.com", "3 fairburn St", "G327qa", "Glasgow", "12:00", "23:00");
 
         Restaurant restaurant9 = new Restaurant ("Wagamama", "https://lh5.googleusercontent.com/p/AF1QipMakr-NLCSBVzn5fYBF8UgE-DKOip1Pv6ELKq1U=w408-h306-k-no", 80, "medium", "Japanese" , 0, "wagam@gmail.com", "97 W George St", "G2 1PB", "Glasgow", "12:00", "21:00");
 
@@ -131,27 +131,27 @@ public class DataLoader implements ApplicationRunner {
         restaurantRepository.save(restaurant19);
         restaurantRepository.save(restaurant20);
 
-        Booking booking1 = new Booking ("25/06/20", "17:00", restaurant1, user1, 4);
-        Booking booking2 = new Booking ("25/06/20", "17:00", restaurant2, user2, 2);
-        Booking booking3 = new Booking ("25/06/20", "17:00", restaurant3, user3, 7);
-        Booking booking4 = new Booking ("25/06/20", "17:00", restaurant4, user4, 4);
-        Booking booking5 = new Booking ("25/06/20", "17:00", restaurant5, user5, 4);
-        Booking booking6 = new Booking ("25/06/20", "17:00", restaurant6, user6, 4);
-        Booking booking7 = new Booking ("25/06/20", "17:00", restaurant7, user7, 4);
-        Booking booking8 = new Booking ("25/06/20", "17:00", restaurant8, user8, 2);
-        Booking booking9 = new Booking ("25/06/20", "17:00", restaurant9, user9, 3);
-        Booking booking10 = new Booking ("25/06/20", "17:00", restaurant10, user10, 4);
-        Booking booking11 = new Booking ("25/06/20", "17:00", restaurant11, user11, 4);
-        Booking booking12 = new Booking ("25/06/20", "17:00", restaurant12, user12, 4);
-        Booking booking13 = new Booking ("25/06/20", "17:00", restaurant13, user13, 4);
-        Booking booking14 = new Booking ("25/06/20", "17:00", restaurant14, user14, 5);
-        Booking booking15 = new Booking ("25/06/20", "17:00", restaurant15, user15, 4);
-        Booking booking16 = new Booking ("30/06/20", "17:00", restaurant16, user1, 1);
-        Booking booking17 = new Booking ("10/07/20", "17:00", restaurant17, user1, 4);
-        Booking booking18 = new Booking ("20/07/20", "17:00", restaurant18, user1, 5);
-        Booking booking19 = new Booking ("25/07/20", "17:00", restaurant19, user1, 3);
-        Booking booking20 = new Booking ("01/08/20", "17:00", restaurant20, user1, 6);
-        Booking booking21 = new Booking ("26/06/20", "17:00", restaurant1, user2, 2);
+        Booking booking1 = new Booking ("2020/06/25", "17:00", restaurant1, user1, 4);
+        Booking booking2 = new Booking ("2020/06/25", "17:00", restaurant2, user2, 2);
+        Booking booking3 = new Booking ("2020/06/25", "17:00", restaurant3, user3, 7);
+        Booking booking4 = new Booking ("2020/06/25", "17:00", restaurant4, user4, 4);
+        Booking booking5 = new Booking ("2020/06/25", "17:00", restaurant5, user5, 4);
+        Booking booking6 = new Booking ("2020/06/25", "17:00", restaurant6, user6, 4);
+        Booking booking7 = new Booking ("2020/06/25", "17:00", restaurant7, user7, 4);
+        Booking booking8 = new Booking ("2020/06/25", "17:00", restaurant8, user8, 2);
+        Booking booking9 = new Booking ("2020/06/25", "17:00", restaurant9, user9, 3);
+        Booking booking10 = new Booking ("2020/06/25", "17:00", restaurant10, user10, 4);
+        Booking booking11 = new Booking ("2020/06/25", "17:00", restaurant11, user11, 4);
+        Booking booking12 = new Booking ("2020/06/25", "17:00", restaurant12, user12, 4);
+        Booking booking13 = new Booking ("2020/06/25", "17:00", restaurant13, user13, 4);
+        Booking booking14 = new Booking ("2020/06/25", "17:00", restaurant14, user14, 5);
+        Booking booking15 = new Booking ("2020/06/25", "17:00", restaurant15, user15, 4);
+        Booking booking16 = new Booking ("2020/06/30", "17:00", restaurant16, user1, 1);
+        Booking booking17 = new Booking ("2020/07/1", "17:00", restaurant17, user1, 4);
+        Booking booking18 = new Booking ("2020/07/6", "17:00", restaurant18, user1, 5);
+        Booking booking19 = new Booking ("2020/07/10", "17:00", restaurant19, user1, 3);
+        Booking booking20 = new Booking ("2020/07/14", "17:00", restaurant20, user1, 6);
+        Booking booking21 = new Booking ("2020/07/10", "17:00", restaurant1, user2, 2);
 
         bookingRepository.save(booking1);
         bookingRepository.save(booking2);
@@ -176,27 +176,27 @@ public class DataLoader implements ApplicationRunner {
         bookingRepository.save(booking21);
 
 
-        Review review1 = new Review ("27/06/20", restaurant1, user1, 5);
-        Review review2 = new Review ("27/06/20", restaurant2, user2, 3);
-        Review review3 = new Review ("27/06/20", restaurant3, user3, 4);
-        Review review4 = new Review ("27/06/20", restaurant4, user4, 4);
-        Review review5 = new Review ("27/06/20", restaurant5, user5, 4);
-        Review review6 = new Review ("27/06/20", restaurant6, user6, 5);
-        Review review7 = new Review ("27/06/20", restaurant7, user7, 5);
-        Review review8 = new Review ("27/06/20", restaurant8, user8, 4);
-        Review review9 = new Review ("27/06/20", restaurant9, user9, 2);
-        Review review10 = new Review ("27/06/20", restaurant10, user10, 5);
-        Review review11 = new Review ("27/06/20", restaurant11, user11, 5);
-        Review review12 = new Review ("27/06/20", restaurant12, user12, 1);
-        Review review13 = new Review ("27/06/20", restaurant13, user13, 4);
-        Review review14 = new Review ("27/06/20", restaurant14, user14, 4);
-        Review review15 = new Review ("27/06/20", restaurant15, user15, 5);
-        Review review16 = new Review ("02/07/20", restaurant16, user1, 2);
-        Review review17 = new Review ("12/07/20", restaurant17, user1, 4);
-        Review review18 = new Review ("22/07/20", restaurant18, user1, 3);
-        Review review19 = new Review ("27/07/20", restaurant19, user1, 4);
-        Review review20 = new Review ("03/08/20", restaurant20, user1, 4);
-        Review review21 = new Review ("27/06/20", restaurant1, user2, 5);
+        Review review1 = new Review ("2020/06/27", restaurant1, user1, 5);
+        Review review2 = new Review ("2020/06/27", restaurant2, user2, 3);
+        Review review3 = new Review ("2020/06/27", restaurant3, user3, 4);
+        Review review4 = new Review ("2020/06/27", restaurant4, user4, 4);
+        Review review5 = new Review ("2020/06/27", restaurant5, user5, 4);
+        Review review6 = new Review ("2020/06/27", restaurant6, user6, 5);
+        Review review7 = new Review ("2020/06/27", restaurant7, user7, 5);
+        Review review8 = new Review ("2020/06/27", restaurant8, user8, 4);
+        Review review9 = new Review ("2020/06/27", restaurant9, user9, 2);
+        Review review10 = new Review ("2020/06/27", restaurant10, user10, 5);
+        Review review11 = new Review ("2020/06/27", restaurant11, user11, 5);
+        Review review12 = new Review ("2020/06/27", restaurant12, user12, 1);
+        Review review13 = new Review ("2020/06/27", restaurant13, user13, 4);
+        Review review14 = new Review ("2020/06/27", restaurant14, user14, 4);
+        Review review15 = new Review ("2020/06/27", restaurant15, user15, 5);
+        Review review16 = new Review ("2020/07/15", restaurant16, user1, 2);
+        Review review17 = new Review ("2020/07/15", restaurant17, user1, 4);
+        Review review18 = new Review ("2020/07/15", restaurant18, user1, 3);
+        Review review19 = new Review ("2020/07/15", restaurant19, user1, 4);
+        Review review20 = new Review ("2020/07/15", restaurant20, user1, 4);
+        Review review21 = new Review ("2020/07/15", restaurant1, user2, 5);
 
         reviewRepository.save(review1);
         reviewRepository.save(review2);
