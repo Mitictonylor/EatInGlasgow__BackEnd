@@ -31,7 +31,7 @@ Build a web app that allows Customer to view restaurants, book table, leave revi
 
 
 **SETUP**
-- download this repo and https://github.com/Mitictonylor/EatInGlasgow__BackEnd
+- download this repo and https://github.com/Mitictonylor/EatInGlasgow__FrontEnd
 - open the BackEnd folder with an IDE, let it build and then run the application(this will open the backend Server)
 - open a terminal windows
 - enter to the frontEnd directory
