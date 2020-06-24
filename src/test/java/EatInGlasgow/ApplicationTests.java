@@ -117,14 +117,14 @@ class ApplicationTests {
 
 	@Test
 	void findBookingsByUserIdAndDate() {
-			List<Booking> foundBookings = bookingRepository.findByUserIdAndDate(2L, "25/06/20");
+			List<Booking> foundBookings = bookingRepository.findByUserIdAndDate(2L, "2020-06-25");
 			assertEquals(1, foundBookings.size());
 		}
 
 
 	@Test
 	void findBookingsByRestaurantIdAndDate() {
-		List<Booking> foundBookings = bookingRepository.findByRestaurantIdAndDate(1L, "25/06/20");
+		List<Booking> foundBookings = bookingRepository.findByRestaurantIdAndDate(1L, "2020-06-25");
 		assertEquals(1, foundBookings.size());
 	}
 
@@ -142,13 +142,13 @@ class ApplicationTests {
 
 	@Test
 	void findReviewsByUserIdAndDate() {
-		List<Review> foundReviews = reviewRepository.findByUserIdAndDate(2L, "27/06/20");
+		List<Review> foundReviews = reviewRepository.findByUserIdAndDate(2L, "2020-06-27");
 		assertEquals(2, foundReviews.size());
 	}
 
 	@Test
 	void findReviewsByRestaurantIdAndDate() {
-		List<Review> foundReviews = reviewRepository.findByRestaurantIdAndDate(1L, "27/06/20");
+		List<Review> foundReviews = reviewRepository.findByRestaurantIdAndDate(1L, "2020-06-27");
 		assertEquals(2, foundReviews.size());
 	}
 
