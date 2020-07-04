@@ -2,6 +2,8 @@ package EatInGlasgow.controllers;
 
 import EatInGlasgow.models.User;
 import EatInGlasgow.repositories.UserRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 
@@ -14,8 +16,14 @@ import java.util.List;
 @RestController
 public class UserController {
 
-    @Autowired
-    UserRepository userRepo;
+
+    private final Logger log = LoggerFactory.getLogger(UserController.class);
+    private UserRepository userRepo;
+
+    public UserController(UserRepository userRepo) {
+        this.userRepo = userRepo;
+    }
+
 
     @GetMapping(value = "/users")
     public ResponseEntity<List<User>> getAllUsers() {
