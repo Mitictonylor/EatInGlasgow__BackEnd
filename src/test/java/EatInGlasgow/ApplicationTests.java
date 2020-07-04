@@ -7,8 +7,7 @@ import EatInGlasgow.models.User;
 import EatInGlasgow.repositories.BookingRepository;
 import EatInGlasgow.repositories.RestaurantRepository;
 import EatInGlasgow.repositories.ReviewRepository;
-import EatInGlasgow.repositories.UserRepository;
-import org.junit.jupiter.api.BeforeEach;
+import EatInGlasgow.repositories.UsersRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +32,7 @@ class ApplicationTests {
 	ReviewRepository reviewRepository;
 
 	@Autowired
-	UserRepository userRepository;
+    UsersRepository usersRepository;
 
 
 

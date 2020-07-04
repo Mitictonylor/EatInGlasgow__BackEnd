@@ -1,7 +1,7 @@
 package EatInGlasgow.controllers;
 
 import EatInGlasgow.models.User;
-import EatInGlasgow.repositories.UserRepository;
+import EatInGlasgow.repositories.UsersRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -16,9 +16,9 @@ public class UsersController {
 
 
     private final Logger log = LoggerFactory.getLogger(UsersController.class);
-    private UserRepository userRepo;
+    private UsersRepository userRepo;
 
-    public UsersController(UserRepository userRepo) {
+    public UsersController(UsersRepository userRepo) {
         this.userRepo = userRepo;
     }
 
