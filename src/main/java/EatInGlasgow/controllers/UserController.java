@@ -35,6 +35,9 @@ public class UserController {
         this.registration = registrations.findByRegistrationId("okta");
     }
 
+    public UserController() {
+    }
+
     @GetMapping("/api/user")
     public ResponseEntity<?> getUser(@AuthenticationPrincipal OAuth2User user) {
         if (user == null) {
