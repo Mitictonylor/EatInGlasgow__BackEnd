@@ -9,4 +9,4 @@ spring:
             scope: openid, email, profile
         provider:
           okta:
-            issuer-uri: https://dev-852177/oauth2/default
+            issuer-uri: https://dev-852177.okta.com/oauth2/default

@@ -7,7 +7,7 @@ import EatInGlasgow.models.User;
 import EatInGlasgow.repositories.BookingRepository;
 import EatInGlasgow.repositories.RestaurantRepository;
 import EatInGlasgow.repositories.ReviewRepository;
-import EatInGlasgow.repositories.UsersRepository;
+import EatInGlasgow.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -26,7 +26,7 @@ public class DataLoader implements ApplicationRunner {
     ReviewRepository reviewRepository;
 
     @Autowired
-    UsersRepository usersRepository;
+    UserRepository userRepository;
 
     public DataLoader() {
     }
@@ -50,21 +50,21 @@ public class DataLoader implements ApplicationRunner {
         User user14 = new User ("Silvia", "Dickens", "silvia@gmail.com", "Glasgow", "g731ug");
         User user15 = new User ("George", "Reynolds", "george@gmail.com", "Glasgow", "g58dj");
 
-        usersRepository.save(user1);
-        usersRepository.save(user2);
-        usersRepository.save(user3);
-        usersRepository.save(user4);
-        usersRepository.save(user5);
-        usersRepository.save(user6);
-        usersRepository.save(user7);
-        usersRepository.save(user8);
-        usersRepository.save(user9);
-        usersRepository.save(user10);
-        usersRepository.save(user11);
-        usersRepository.save(user12);
-        usersRepository.save(user13);
-        usersRepository.save(user14);
-        usersRepository.save(user15);
+        userRepository.save(user1);
+        userRepository.save(user2);
+        userRepository.save(user3);
+        userRepository.save(user4);
+        userRepository.save(user5);
+        userRepository.save(user6);
+        userRepository.save(user7);
+        userRepository.save(user8);
+        userRepository.save(user9);
+        userRepository.save(user10);
+        userRepository.save(user11);
+        userRepository.save(user12);
+        userRepository.save(user13);
+        userRepository.save(user14);
+        userRepository.save(user15);
 
 
         Restaurant restaurant1 = new Restaurant ("Sapori d’ Italia", "https://files.list.co.uk/images/2016/12/19/img-5552-ti-lst228252_thumb.jpg", 50, "medium", "Italian", 0,  "sappori@gmail.com",  "1021 Cathcart Road", "G42 9XJ", "Glasgow", "16:00", "23:00");
